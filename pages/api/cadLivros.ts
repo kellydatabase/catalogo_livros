@@ -3,7 +3,6 @@ import type {RespostaPadraoMsg} from '../../types/respostaPadraoMsg';
 import nc from 'next-connect';
 import {upload, uploadImagemCosmic} from '../../services/uploadImagemCosmic';
 import {conectarMongoDB} from '../../middlewares/conectarMongoDb';
-import {validarTokenJWT} from '../../middlewares/validarTokenJwt';
 import {LivroModel} from '../../models/livroModels';
 import {UsuarioModel} from '../../models/usuarioModels';
 
@@ -67,4 +66,4 @@ export const config = {
     }
 }
 
-export default validarTokenJWT(conectarMongoDB(handler));
+export default conectarMongoDB(handler);
